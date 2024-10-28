@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:wheather_app/env/env.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -25,7 +26,7 @@ class Home extends StatelessWidget {
 
     try {
       var response = await dio.get(
-        'http://api.weatherapi.com/v1/current.json?key=62c2b30e85374cebadb231056242610&q=Mumbai',
+        'http://api.weatherapi.com/v1/current.json?key=${Env.apiKey}&q=Mumbai',
       );
 
       print(response.data);

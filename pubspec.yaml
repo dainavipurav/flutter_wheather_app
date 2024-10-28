@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   dio: ^5.7.0
+  envied: ^0.5.4+1
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.6.1
@@ -16,6 +17,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+  envied_generator: ^0.5.4+1
 
 flutter:
   uses-material-design: true
