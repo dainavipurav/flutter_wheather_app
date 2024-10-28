@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:wheather_app/core/dio_client.dart';
 import 'package:wheather_app/env/env.dart';
+import 'package:wheather_app/utils/utils.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -22,11 +24,13 @@ class Home extends StatelessWidget {
   }
 
   void getWheatherUpdate() async {
-    Dio dio = Dio();
-
     try {
-      var response = await dio.get(
-        'http://api.weatherapi.com/v1/current.json?key=${Env.apiKey}&q=Mumbai',
+      var response = await DioClient().dio.get(
+        ApiEndPoints.currentWheather,
+        queryParameters: {
+          'key': Env.apiKey,
+          'q': 'Mumbai',
+        },
       );
 
       print(response.data);
